@@ -30,7 +30,7 @@ public class Main {
 		queue = new LinkedTransferQueue<Object>();
 		parser = getParser(reader, queue);
 		printer = new QueuePrinter(queue);
-		
+
 		// run parser and printer
 		new Thread(parser).start();
 		new Thread(printer).start();
