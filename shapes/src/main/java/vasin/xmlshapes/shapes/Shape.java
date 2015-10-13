@@ -39,7 +39,7 @@ public abstract class Shape {
 	
 	public String toString() {
 		if (printInfo.isEmpty()) {
-			printInfo = String.format(Locale.ENGLISH, "[%s] %d: %s - %.2f", this.getClass().getName(), id, color, getArea());
+			printInfo = String.format(Locale.ENGLISH, "%d: %s - %.2f", id, color, getArea());
 		}
 		return printInfo;
 	}
