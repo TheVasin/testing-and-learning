@@ -11,29 +11,29 @@ import java.util.concurrent.BlockingQueue;
 import vasin.xmlshapes.Errors;
 
 public class QueuePrinter implements Runnable {
-	private BlockingQueue<Object> queue;
-	
-	public QueuePrinter(BlockingQueue<Object> queue) {
-		this.queue = queue;
-	}
+    private BlockingQueue<Object> queue;
+    
+    public QueuePrinter(BlockingQueue<Object> queue) {
+        this.queue = queue;
+    }
 
-	@Override
-	public void run() {
-		Object element;
-		while (true) {
-			try {
-				element = queue.take();
-				if (element instanceof EndOfQueue) { // terminate if received special object marking the end of the queue
-					break;
-				}
-				System.out.println(element);
-			} catch (InterruptedException e) {
-				interrupted();
-			}
-		}
-	}
-	
-	private void interrupted() {
-		Errors.printErrorAndExit(Errors.MESSAGE_INTERRUPTED, Errors.ERROR_INTERRUPTED);
-	}
+    @Override
+    public void run() {
+        Object element;
+        while (true) {
+            try {
+                element = queue.take();
+                if (element instanceof EndOfQueue) { // terminate if received special object marking the end of the queue
+                    break;
+                }
+                System.out.println(element);
+            } catch (InterruptedException e) {
+                interrupted();
+            }
+        }
+    }
+    
+    private void interrupted() {
+        Errors.printErrorAndExit(Errors.MESSAGE_INTERRUPTED, Errors.ERROR_INTERRUPTED);
+    }
 }
