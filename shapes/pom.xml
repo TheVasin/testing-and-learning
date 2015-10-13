@@ -13,6 +13,9 @@
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
+          <descriptorRefs>
+            <descriptorRef>runnable</descriptorRef>
+          </descriptorRefs>
           <archive>
             <manifest>
               <mainClass>vasin.xmlshapes.Main</mainClass>
