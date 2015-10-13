@@ -26,22 +26,27 @@
  * 2015, Alexander Vasin <alexander.v.vasin@gmail.com>
  */
 
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
 import vasin.xmlshapes.shapes.Circle;
 import vasin.xmlshapes.shapes.Rectangle;
 import vasin.xmlshapes.shapes.Square;
 import vasin.xmlshapes.shapes.Triangle;
 
 public class TestShapes {
-
-    public static void main(String[] args) {
+    private final float DELTA = 0.001f;
+    @Test
+    public void testShapes() {
         Triangle t = new Triangle(1, "red", 18, 30, 24);
         Circle c = new Circle(2, "orange", 20);
         Square s = new Square(3, "yellow", 4);
         Rectangle r = new Rectangle(4, "black", 3, 2);
         
-        assert t.getArea() == 216.00f : "Wrong triangle area: " + t.getArea();
-        assert c.getArea() == 314.1592654f : "Wrong circle area: " + c.getArea();
-        assert s.getArea() == 16.00f : "Wrong square area: " + s.getArea();
-        assert r.getArea() == 6.00f : "Wrong rectangle area: " + r.getArea();
+        assertEquals(t.getArea(), 216.00f, DELTA);
+        assertEquals(c.getArea(), 314.1592654f, DELTA);
+        assertEquals(s.getArea(), 16.00f, DELTA);
+        assertEquals(r.getArea(), 6.00f, DELTA);
     }
 }
