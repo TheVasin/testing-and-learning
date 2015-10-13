@@ -5,14 +5,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>Shapes</groupId>
   <artifactId>Shapes</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.9</version>
   <name>shapes</name>
   <build>
+    <finalName>shapes-parser</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
-          <finalname>xmlshapes-parser</finalname>
           <descriptorRefs>
             <descriptorRef>jar-with-dependencies</descriptorRef>
           </descriptorRefs>
